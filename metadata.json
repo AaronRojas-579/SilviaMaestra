@@ -1,0 +1,8 @@
+{
+  "name": "Silvia, Maestra Particular",
+  "description": "A refined tutoring platform for intentional learning, featuring personalized academic calendars, teacher profiles, and AI-powered visual learning tools.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

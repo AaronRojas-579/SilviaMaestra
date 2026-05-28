@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #005da7;
+  --color-primary-dim: #005192;
+  --color-primary-container: #68abff;
+  --color-on-primary: #eef3ff;
+  --color-on-primary-container: #002b52;
+
+  --color-secondary: #196753;
+  --color-secondary-dim: #025b48;
+  --color-secondary-container: #a8f1d7;
+  --color-on-secondary-container: #065d4a;
+
+  --color-tertiary: #745700;
+  --color-tertiary-container: #f9cc61;
+  --color-on-tertiary-container: #5b4400;
+
+  --color-surface: #f6f6ff;
+  --color-on-surface: #1d2e51;
+  --color-on-surface-variant: #4b5b81;
+  --color-surface-container: #e1e8ff;
+  --color-surface-container-low: #edf0ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #d9e2ff;
+  --color-surface-container-highest: #d0dcff;
+
+  --color-outline: #66769e;
+  --color-outline-variant: #9cadd7;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-surface text-on-surface antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}

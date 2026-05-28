@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "Availability": {
+      "title": "Calendar Availability",
+      "description": "Availability status for a specific day",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["available", "full", "partial-am", "partial-pm", "closed", "reading-workshop"],
+          "description": "Availability status of the day"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last time this day was updated"
+        }
+      },
+      "required": ["status", "updatedAt"]
+    },
+    "Student": {
+      "title": "Student Info",
+      "description": "Details about a student and their tutor",
+      "type": "object",
+      "properties": {
+        "studentName": { "type": "string" },
+        "grade": { "type": "string" },
+        "parentName": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "frequency": { "type": "string" },
+        "preferredDays": { "type": "array", "items": { "type": "string" } },
+        "comments": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentName", "parentName", "contactPhone"]
+    },
+    "Session": {
+      "title": "Tutoring Session",
+      "description": "An assigned session for a student",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "date": { "type": "string", "description": "Format YYYY-MM-DD" },
+        "timeSlot": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "date", "timeSlot"]
+    }
+  },
+  "firestore": {
+    "availability/{date}": {
+      "schema": "Availability",
+      "description": "Collection storing availability status for each day"
+    },
+    "students/{studentId}": {
+      "schema": "Student",
+      "description": "Managed students"
+    },
+    "sessions/{sessionId}": {
+      "schema": "Session",
+      "description": "Scheduled classes"
+    }
+  }
+}
